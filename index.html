@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, My Love ❤️</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: Georgia, serif;
+  color: white;
+  text-align: center;
+  background: linear-gradient(135deg, #240016, #791d45, #ed789e);
+  overflow-x: hidden;
+}
+.card {
+  width: min(90%, 520px);
+  padding: 38px 24px;
+  margin: 25px 0;
+  border: 1px solid #ffffff55;
+  border-radius: 25px;
+  background: #ffffff15;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 40px #ff8bb755;
+}
+h1 { font-size: clamp(2.2rem, 9vw, 3.6rem); }
+p { line-height: 1.8; }
+.heart { font-size: 55px; animation: beat 1s infinite; }
+button {
+  border: 0;
+  border-radius: 30px;
+  padding: 13px 22px;
+  margin: 8px;
+  background: #fff0f5;
+  color: #8d1746;
+  font-size: 16px;
+  cursor: pointer;
+}
+#surprise { display: none; }
+.floating {
+  position: fixed;
+  bottom: -40px;
+  animation: float 7s linear infinite;
+  pointer-events: none;
+}
+@keyframes beat {
+  50% { transform: scale(1.2); }
+}
+@keyframes float {
+  to { transform: translateY(-115vh) rotate(25deg); opacity: 0; }
+}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="heart">❤️</div>
+  <p>HAPPY BIRTHDAY TO</p>
+  <h1>My Beautiful Wife</h1>
+  <p>
+    You are my favorite person, my peace, and my
+    greatest blessing. Every moment with you is a
+    beautiful gift. If I could choose again, I would
+    choose you in every lifetime.
+  </p>
+  <h2>Forever Yours 💍</h2>
+
+  <button onclick="document.getElementById('surprise').style.display='block'">
+    Open Your Surprise 💌
+  </button>
+
+  <section id="surprise">
+    <h2>My love, my forever! 🌹</h2>
+    <p>
+      Happy Birthday, jaan! 🥹❤️<br>
+      May your smile always shine, your dreams come
+      true, and our love grow stronger every day.
+      You will always be my favorite chapter.
+      I love you endlessly!
+    </p>
+    <p>Yours today, tomorrow & always ❤️</p>
+  </section>
+
+  <hr style="border-color:#ffffff55;margin:25px 0">
+
+  <h3>🎵 Our Special Song</h3>
+  <p>“Pehla Lafz” — a little music for my love.</p>
+
+  <!-- Add your Pehla Lafz audio file below -->
+  <audio id="song" controls loop style="width:100%">
+    <source src="phela-lafz.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
+  <p style="font-size:12px">
+    Add your legally obtained song file as
+    <b>phela-lafz.mp3</b> in the same folder.
+    Press play to start the music.
+  </p>
+</main>
+
+<script>
+function makeHeart() {
+  const heart = document.createElement("div");
+  heart.className = "floating";
+  heart.textContent = ["❤️", "💕", "🌹", "💗"][Math.floor(Math.random()*4)];
+  heart.style.left = Math.random()*100 + "vw";
+  heart.style.fontSize = (16 + Math.random()*24) + "px";
+  heart.style.animationDuration = (5 + Math.random()*5) + "s";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 10000);
+}
+setInterval(makeHeart, 500);
+</script>
+</body>
+</html>
